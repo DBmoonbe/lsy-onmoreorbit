@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" lang="zh-CN" data-pptx-page-role="ending" font-family="Microsoft YaHei, Arial" font-size="52">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1080" height="1920" fill="#F7F0E2" />
+  <g id="header" data-pptx-bounds="80 140 920 80">
+<text x="80" y="186" font-size="30" fill="#D9602C">100 件小事 · 全量牌堆</text>
+<text x="1000" y="186" font-size="30" fill="#D9602C" text-anchor="end">102 / 102</text>
+<line x1="80" y1="214" x2="1000" y2="214" stroke="#D9602C" stroke-width="3" />
+</g>
+  <g id="end-kicker" data-pptx-bounds="80 300 920 70">
+<text x="80" y="360" font-size="30" fill="#D9602C" letter-spacing="4">BONUS CARD</text>
+</g>
+  <g id="end-number" data-pptx-bounds="80 440 920 300">
+<text x="80" y="640" font-size="210" fill="#D9602C" font-weight="bold" font-family="Arial, Microsoft YaHei">101</text>
+</g>
+  <g id="end-title" data-pptx-bounds="80 740 920 100">
+<text x="80" y="810" font-size="76" fill="#241D16" font-weight="bold">第 101 件：</text>
+</g>
+  <g id="end-blank" data-pptx-bounds="80 850 920 340">
+<rect x="80" y="850" width="920" height="340" fill="#FFFFFF" rx="20" stroke="#D9602C" stroke-width="5" />
+<line x1="140" y1="1080" x2="940" y2="1080" stroke="#E8DCC6" stroke-width="4" />
+<text x="140" y="1010" font-size="44" fill="#B4A794">（这里留给你自己写）</text>
+</g>
+  <g id="end-note" data-pptx-bounds="80 1250 920 300" fill="#241D16">
+<text x="80" y="1330" font-weight="bold">清单一定会漏掉点什么。</text>
+<text x="80" y="1420" font-size="46">那件只属于你的小事，<tspan x="80" dy="70">才是这副牌里最稀有的一张。</tspan></text>
+</g>
+  <g id="end-quote" data-pptx-bounds="80 1580 920 160">
+<line x1="80" y1="1590" x2="1000" y2="1590" stroke="#D9602C" stroke-width="4" />
+<text x="80" y="1660" font-size="34" fill="#8A7B66">有些事情不是为了完成，而是为了记住。</text>
+<text x="1000" y="1710" font-size="28" fill="#8A7B66" text-anchor="end">102 / 102</text>
+</g>
+</svg>

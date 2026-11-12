@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" lang="zh-CN" data-pptx-page-role="cover" font-family="Microsoft YaHei, Arial" font-size="52">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1080" height="1920" fill="#1E1B18" />
+  <g id="cover-kicker" data-pptx-bounds="80 140 920 100">
+<text x="80" y="200" font-size="30" fill="#E0A93B" letter-spacing="3">A FULL DECK · 100 CARDS · 2026</text>
+<line x1="80" y1="226" x2="1000" y2="226" stroke="#4A443C" stroke-width="3" />
+</g>
+  <g id="cover-head" data-pptx-bounds="80 260 920 400">
+<text x="80" y="430" font-size="132" fill="#F7F0E2" font-weight="bold">大学四年</text>
+<text x="80" y="580" font-size="132" fill="#F7F0E2" font-weight="bold">想做的</text>
+<circle cx="870" cy="430" r="120" fill="#D9602C" />
+<text x="870" y="415" fill="#F7F0E2" text-anchor="middle" font-weight="bold">一张</text>
+<text x="870" y="475" fill="#F7F0E2" text-anchor="middle" font-weight="bold">不少</text>
+</g>
+  <g id="cover-number" data-pptx-bounds="68 680 920 460">
+<text x="68" y="1010" font-size="320" fill="#D9602C" font-weight="bold" font-family="Arial, Microsoft YaHei">100</text>
+</g>
+  <g id="cover-tail" data-pptx-bounds="80 1160 920 280">
+<text x="80" y="1290" font-size="132" fill="#F7F0E2" font-weight="bold">件小事</text>
+<text x="80" y="1370" font-size="44" fill="#C9BFAE">全量牌堆 · 从 001 到 100，配合抽卡器食用</text>
+</g>
+  <g id="cover-footer" data-pptx-bounds="80 1590 920 140">
+<line x1="80" y1="1620" x2="1000" y2="1620" stroke="#4A443C" stroke-width="3" />
+<text x="80" y="1680" font-size="34" fill="#C9BFAE">有些事情不是为了完成，而是为了记住。</text>
+<text x="1000" y="1680" font-size="28" fill="#C9BFAE" text-anchor="end">01 / 102</text>
+</g>
+</svg>

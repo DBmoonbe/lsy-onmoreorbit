@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" lang="zh-CN" data-pptx-page-role="content" font-family="Microsoft YaHei, Arial" font-size="52">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1080" height="1920" fill="#8FA9DC" />
+  <g id="header" data-pptx-bounds="80 140 920 80">
+<text x="80" y="186" font-size="30" fill="#121C2E">NO. 078 · 感受世界</text>
+<text x="1000" y="186" font-size="30" fill="#121C2E" text-anchor="end">79 / 102</text>
+<line x1="80" y1="214" x2="1000" y2="214" stroke="#121C2E" stroke-width="3" />
+</g>
+  <g id="visual" data-pptx-bounds="80 280 920 780">
+<text x="80" y="570" font-size="320" fill="#34508F" font-weight="bold" font-family="Arial, Microsoft YaHei">078</text>
+<g transform="translate(360 660) scale(1.85)" stroke="#34508F" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="100" r="66"/><path d="M34 100c22-30 44-30 66 0s44 30 66 0"/><circle cx="100" cy="100" r="22"/><path d="M100 14v18 M100 168v18"/></g>
+<line x1="140" y1="1030" x2="940" y2="1030" stroke="#121C2E" stroke-width="6" />
+<rect x="180" y="930" width="90" height="100" fill="#D0DBF0" />
+<rect x="780" y="890" width="110" height="140" fill="#D0DBF0" />
+<rect x="300" y="960" width="70" height="70" fill="#D0DBF0" />
+</g>
+  <g id="card-title" data-pptx-bounds="80 1080 920 140">
+<text x="80" y="1175" font-size="76" fill="#121C2E" font-weight="bold">观察一次月亮圆缺</text>
+</g>
+  <g id="divider" data-pptx-bounds="80 1230 920 10">
+<line x1="80" y1="1235" x2="1000" y2="1235" stroke="#34508F" stroke-width="4" />
+</g>
+  <g id="translation" data-pptx-bounds="80 1270 920 260">
+<text x="80" y="1318" font-size="30" fill="#34508F">人话翻译</text>
+<text x="80" y="1392" font-size="46" fill="#121C2E">拍了四张，第五天开始下雨。</text>
+</g>
+  <g id="card-specs" data-pptx-bounds="80 1535 920 145">
+<rect x="80" y="1540" width="290" height="120" fill="#D0DBF0" rx="14" />
+<text x="100" y="1585" font-size="30" fill="#34508F">难度</text>
+<text x="100" y="1635" font-size="36" fill="#121C2E" font-weight="bold">★★★☆☆</text>
+<rect x="390" y="1540" width="290" height="120" fill="#D0DBF0" rx="14" />
+<text x="410" y="1585" font-size="30" fill="#34508F">预算</text>
+<text x="410" y="1635" font-size="36" fill="#121C2E" font-weight="bold">¥30~200</text>
+<rect x="700" y="1540" width="290" height="120" fill="#D0DBF0" rx="14" />
+<text x="720" y="1585" font-size="30" fill="#34508F">建议</text>
+<text x="720" y="1635" font-size="36" fill="#121C2E" font-weight="bold">大二，正当时</text>
+</g>
+  <g id="footer" data-pptx-bounds="80 1685 920 55" fill="#121C2E" font-size="28">
+<text x="80" y="1715">大学四年，想做的 100 件小事</text>
+<text x="1000" y="1715" text-anchor="end">078</text>
+</g>
+</svg>

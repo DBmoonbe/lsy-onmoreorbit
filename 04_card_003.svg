@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" lang="zh-CN" data-pptx-page-role="content" font-family="Microsoft YaHei, Arial" font-size="52">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1080" height="1920" fill="#F2B441" />
+  <g id="header" data-pptx-bounds="80 140 920 80">
+<text x="80" y="186" font-size="30" fill="#2A1B06">NO. 003 · 校园时光</text>
+<text x="1000" y="186" font-size="30" fill="#2A1B06" text-anchor="end">4 / 102</text>
+<line x1="80" y1="214" x2="1000" y2="214" stroke="#2A1B06" stroke-width="3" />
+</g>
+  <g id="visual" data-pptx-bounds="80 280 920 780">
+<text x="80" y="570" font-size="320" fill="#B45309" font-weight="bold" font-family="Arial, Microsoft YaHei">003</text>
+<g transform="translate(360 660) scale(1.85)" stroke="#B45309" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="86" r="34"/><path d="M100 28v14 M53 86H39 M161 86h-14 M67 53l-10-10 M133 53l10-10"/><path d="M20 150h160 M36 150v-30h34v30 M120 150v-44h44v44"/></g>
+<line x1="140" y1="1030" x2="940" y2="1030" stroke="#2A1B06" stroke-width="6" />
+<rect x="180" y="930" width="90" height="100" fill="#FAE0AF" />
+<rect x="780" y="890" width="110" height="140" fill="#FAE0AF" />
+<rect x="300" y="960" width="70" height="70" fill="#FAE0AF" />
+</g>
+  <g id="card-title" data-pptx-bounds="80 1080 920 140">
+<text x="80" y="1175" font-size="76" fill="#2A1B06" font-weight="bold">在操场吹晚风</text>
+</g>
+  <g id="divider" data-pptx-bounds="80 1230 920 10">
+<line x1="80" y1="1235" x2="1000" y2="1235" stroke="#B45309" stroke-width="4" />
+</g>
+  <g id="translation" data-pptx-bounds="80 1270 920 260">
+<text x="80" y="1318" font-size="30" fill="#B45309">人话翻译</text>
+<text x="80" y="1392" font-size="46" fill="#2A1B06">风是吹了，主要议题是「今晚吃什么」。</text>
+</g>
+  <g id="card-specs" data-pptx-bounds="80 1535 920 145">
+<rect x="80" y="1540" width="290" height="120" fill="#FAE0AF" rx="14" />
+<text x="100" y="1585" font-size="30" fill="#B45309">难度</text>
+<text x="100" y="1635" font-size="36" fill="#2A1B06" font-weight="bold">★★☆☆☆</text>
+<rect x="390" y="1540" width="290" height="120" fill="#FAE0AF" rx="14" />
+<text x="410" y="1585" font-size="30" fill="#B45309">预算</text>
+<text x="410" y="1635" font-size="36" fill="#2A1B06" font-weight="bold">¥0</text>
+<rect x="700" y="1540" width="290" height="120" fill="#FAE0AF" rx="14" />
+<text x="720" y="1585" font-size="30" fill="#B45309">建议</text>
+<text x="720" y="1635" font-size="36" fill="#2A1B06" font-weight="bold">大三，还来得及</text>
+</g>
+  <g id="footer" data-pptx-bounds="80 1685 920 55" fill="#2A1B06" font-size="28">
+<text x="80" y="1715">大学四年，想做的 100 件小事</text>
+<text x="1000" y="1715" text-anchor="end">003</text>
+</g>
+</svg>
