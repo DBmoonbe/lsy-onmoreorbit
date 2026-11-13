@@ -14,9 +14,9 @@
 
 代码不够优雅，结构不够克制，很多地方都能看出“第一次”的生涩。我不打算掩饰这些。它会一直留在线上，也会一直改。功能未必会变多，但细节会被慢慢打磨。它大概会是我运营最久、更新最久、优化时间最长的一个作品。这一页还一直挂着，想到什么就添一点，哪里不顺手就改一改；朋友在上面留的话和照片也都还在。技术慢慢补，页面慢慢长。
 
-**在线看**：<https://dbmoonbe.github.io/lsy-onmoreorbit/>
+**在线看（静态展示版）**：<https://dbmoonbe.github.io/lsy-onmoreorbit/>
 
-这是静态展示版：气球、蜡烛、生日签、烟花、100 张卡片都能玩。留言和照片的云端同步只在作者单独分享的完整链接里开放。
+这是静态展示版：气球、蜡烛、生日签、烟花、100 张卡片都能玩。不过 GitHub Pages 是纯静态托管，只能放网页文件、不提供数据库，因此留言、照片、愿望这些要存到后台的功能在这里用不了。它们只在作者单独分享的 WorkBuddy 托管链接里开放——那个版本接了云端数据库，是页面的完整功能版。
 
 ### 页面里有什么
 
@@ -58,15 +58,13 @@ README.md           本说明
 
 This is the first thing I built — a single page made for a friend's birthday.
 
-It is rough in the way a first project tends to be: everything sits in one `index.html`, styles, animations and logic piled together, no framework, performance barely considered. The cloud guestbook, the card drawer and the fireworks were each added whenever an idea turned up. It runs, but it is a long way from being well written.
+A first attempt is bound to be rough, and this one is no exception: everything sits in one `index.html`, styles, animations and logic piled together, no framework, performance barely considered. The cloud guestbook, the card drawer and the fireworks were each added whenever an idea turned up. It runs, but it is a long way from being well written.
 
-It will probably be the thing I keep working on the longest, though. Other exercises get finished and left alone; this page stays up. Something gets added when it comes to mind, something gets fixed when it feels clumsy, and the notes and photos people left are still here. The code improves slowly, and the page grows with it.
+The code isn't elegant and the structure isn't disciplined; the awkwardness of a first attempt shows in many places. I don't mean to hide any of it. The page will stay online, and it will keep changing. Features may not grow much, but the details will be polished over time. It will probably be the project I run, update and refine the longest. It has stayed up all along — something gets added when it comes to mind, something gets fixed when it feels clumsy, and the notes and photos people left are still here. The code improves slowly, and the page grows with it.
 
-Writing it down here for now.
+**See it live (static showcase)**: <https://dbmoonbe.github.io/lsy-onmoreorbit/>
 
-**See it live**: <https://dbmoonbe.github.io/lsy-onmoreorbit/>
-
-This is the static showcase. Balloons, candles, fortune slips, fireworks and all 100 cards work here; the cloud guestbook and photo uploads live behind a separate link the author shares privately.
+This is the static showcase: balloons, candles, fortune slips, fireworks and all 100 cards work here. GitHub Pages is static hosting only — it serves web files but provides no database, so the guestbook, photo uploads and wishes (which need a backend) don't work on this link. They live behind the author's separately shared WorkBuddy link, which is backed by a cloud database and is the full-featured version of the page.
 
 ### What's on the page
 
