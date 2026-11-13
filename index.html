@@ -491,6 +491,12 @@ button{cursor:pointer;border:0;background:none;color:inherit}
 .role-chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .mem-file{font-size:12px;color:var(--ink-soft)}
 .mem-file input{font-size:12px;max-width:100%}
+.visually-hidden-file{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.mem-file-btn{display:inline-block;cursor:pointer;font-size:13px;padding:9px 15px;border-radius:10px;
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);user-select:none;-webkit-tap-highlight-color:transparent}
+.mem-file-btn:active{background:#f3e9f0}
+.mem-special-note{font-size:12px;color:#a3781f;background:#f7e6bd;border-radius:8px;
+  padding:8px 11px;margin-bottom:12px;line-height:1.6}
 .mem-preview{width:100%;max-height:150px;object-fit:cover;border-radius:10px;margin-top:10px;display:block}
 .mem-actions{display:flex;gap:14px;margin-top:14px;align-items:center}
 .mem-actions .btn{padding:10px 20px;font-size:13px}
@@ -900,7 +906,9 @@ button{cursor:pointer;border:0;background:none;color:inherit}
           <label for="ownerText">想写点什么（也可以只传照片）</label>
           <textarea id="ownerText" maxlength="500" placeholder="今天的蛋糕好吃吗？或者就写一句「今天很开心」…"></textarea>
           <div class="row">
-            <span class="mem-file"><input type="file" id="ownerFile" accept="image/*"></span>
+            <label class="mem-file-btn">📷 传张照片
+              <input type="file" id="ownerFile" accept="image/*" class="visually-hidden-file">
+            </label>
           </div>
           <img class="mem-preview" id="ownerPreview" alt="照片预览" style="display:none">
           <div class="mem-actions">
@@ -916,20 +924,28 @@ button{cursor:pointer;border:0;background:none;color:inherit}
           <span class="mem-badge">大家的祝福</span>
           <h3>写给她的话</h3>
         </div>
-        <p class="mem-sub">朋友们留一句祝福，新写的排在前面。</p>
+        <p class="mem-sub">朋友们留一句祝福，或传张照片，新写的排在前面。</p>
         <button class="mem-add" id="friendAdd">＋ 留一句祝福</button>
         <div class="mem-form" id="friendForm">
-          <label>以什么身份留</label>
           <div class="mem-role" id="friendRole">
-            <button class="role-chip on" data-role="friend">来送祝福的朋友</button>
-            <button class="role-chip" data-role="special">做网页的那个人</button>
+            <button type="button" class="role-chip on" data-role="friend">我是朋友</button>
+            <button type="button" class="role-chip" data-role="special">做网页的那个人</button>
           </div>
-          <label for="friendName">署名</label>
-          <div class="row" style="margin-top:0">
-            <input type="text" id="friendName" maxlength="20" placeholder="怎么写称呼？">
+          <div id="friendNameRow">
+            <label for="friendName">署名</label>
+            <div class="row" style="margin-top:0">
+              <input type="text" id="friendName" maxlength="20" placeholder="怎么写称呼？">
+            </div>
           </div>
+          <div class="mem-special-note" id="friendSpecialNote" style="display:none">这是「神的特别」，会置顶在思钰那一页 ✦</div>
           <label for="friendText" style="margin-top:12px">想对她说</label>
           <textarea id="friendText" maxlength="300" placeholder="生日快乐，还有…"></textarea>
+          <div class="row">
+            <label class="mem-file-btn">📷 传张照片
+              <input type="file" id="friendFile" accept="image/*" class="visually-hidden-file">
+            </label>
+          </div>
+          <img class="mem-preview" id="friendPreview" alt="照片预览" style="display:none">
           <div class="mem-actions">
             <button class="btn btn-main" id="friendSave">留下来 ✦</button>
             <button class="mem-cancel" id="friendCancel">收起</button>
@@ -1635,7 +1651,7 @@ function renderMem(side){
   }));
   initTapHints();   // 云端记录随时会刷新，新照片也要挂上角标
 }
-let ownerImg = null, friendRole = 'friend';
+let ownerImg = null, friendImg = null, friendRole = 'friend';
 function toggleMemForm(which, on){
   $(which + 'Form').classList.toggle('open', on);
   $(which + 'Add').textContent = on ? '收起 ▲'
@@ -1680,18 +1696,30 @@ async function saveOwner(){
 }
 async function saveFriend(){
   const text = $('friendText').value.trim();
-  if (!text){ toast('先写一句祝福吧 ✦'); return; }
-  if (friendRole === 'special' && SPECIAL_CODE &&
-      prompt('这个身份是留给做网页的人的，请输入约定的暗号') !== SPECIAL_CODE){ toast('暗号不对哦'); return; }
-  const name = $('friendName').value.trim() ||
-    (friendRole === 'special' ? '做网页的那个人' : '一位朋友');
-  const item = { id: newId(), side: 'friend', role: friendRole, author: name,
-                 text, img: null, at: Date.now() };
+  if (!text && !friendImg){ toast('写一句祝福，或者传张照片 ✦'); return; }
+  let item;
+  if (friendRole === 'special'){
+    item = { id: newId(), side: 'owner', role: 'special', author: '做网页的那个人',
+             text, img: friendImg, at: Date.now() };
+  } else {
+    const name = $('friendName').value.trim() || '一位朋友';
+    item = { id: newId(), side: 'friend', role: 'friend', author: name,
+             text, img: friendImg, at: Date.now() };
+  }
   if (!await addPost(item)) return;
   $('friendText').value = ''; $('friendName').value = '';
-  toggleMemForm('friend', false); renderMem('friend');
+  $('friendFile').value = ''; $('friendPreview').style.display = 'none'; friendImg = null;
+  toggleMemForm('friend', false); resetFriendRole();
+  renderMem('friend'); if (friendRole === 'special') renderMem('owner');
   burst(innerWidth / 2, innerHeight * .4, 26, .8);
-  toast('祝福收到了 ✦');
+  toast(friendRole === 'special' ? '已放进「神的特别」✦' : '祝福收到了 ✦');
+}
+/* 朋友表单收起时把身份和署名复位成「我是朋友」，避免下一位访客误发到神的特别 */
+function resetFriendRole(){
+  friendRole = 'friend';
+  $('friendRole').querySelectorAll('.role-chip').forEach(c => c.classList.toggle('on', c.dataset.role === 'friend'));
+  $('friendNameRow').style.display = '';
+  $('friendSpecialNote').style.display = 'none';
 }
 
 /* ================= 滚动渐显 ================= */
@@ -1804,18 +1832,29 @@ $('wishInput').addEventListener('keydown', e => { if (e.key === 'Enter') addWish
 $('ownerAdd').addEventListener('click', () => toggleMemForm('owner', !$('ownerForm').classList.contains('open')));
 $('ownerCancel').addEventListener('click', () => toggleMemForm('owner', false));
 $('friendAdd').addEventListener('click', () => toggleMemForm('friend', !$('friendForm').classList.contains('open')));
-$('friendCancel').addEventListener('click', () => toggleMemForm('friend', false));
+$('friendCancel').addEventListener('click', () => { toggleMemForm('friend', false); resetFriendRole(); });
 $('ownerFile').addEventListener('change', e => readImage(e.target.files[0], d => {
   ownerImg = d;
   const pv = $('ownerPreview'); pv.src = d; pv.style.display = 'block';
 }));
-$('ownerSave').addEventListener('click', saveOwner);
-$('friendSave').addEventListener('click', saveFriend);
-$('friendRole').querySelectorAll('.role-chip').forEach(ch => ch.addEventListener('click', () => {
-  $('friendRole').querySelectorAll('.role-chip').forEach(x => x.classList.remove('on'));
-  ch.classList.add('on'); friendRole = ch.dataset.role;
-  $('friendName').value = friendRole === 'special' ? '做网页的那个人' : '';
+$('friendFile').addEventListener('change', e => readImage(e.target.files[0], d => {
+  friendImg = d;
+  const pv = $('friendPreview'); pv.src = d; pv.style.display = 'block';
 }));
+$('friendPreview').addEventListener('click', () => {
+  friendImg = null; $('friendFile').value = ''; $('friendPreview').style.display = 'none';
+});
+$('ownerSave').addEventListener('click', saveOwner);
+/* 朋友表单：切换「我是朋友 / 做网页的那个人」身份 */
+$('friendRole').querySelectorAll('.role-chip').forEach(chip => chip.addEventListener('click', () => {
+  friendRole = chip.dataset.role;
+  $('friendRole').querySelectorAll('.role-chip').forEach(c => c.classList.toggle('on', c === chip));
+  const special = friendRole === 'special';
+  $('friendNameRow').style.display = special ? 'none' : '';
+  $('friendSpecialNote').style.display = special ? 'block' : 'none';
+  if (special) $('friendText').focus();
+}));
+$('friendSave').addEventListener('click', saveFriend);
 $('photoClose').addEventListener('click', () => $('photoModal').classList.remove('open'));
 $('photoModal').addEventListener('click', e => { if (e.target.id === 'photoModal') $('photoModal').classList.remove('open'); });
 $('fireBtn').addEventListener('click', fireworks);
